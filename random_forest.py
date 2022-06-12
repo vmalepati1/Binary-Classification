@@ -14,6 +14,8 @@ x_train, y_train, x_test, y_test = get_processed_data()
 print('Train data shape: ' + str(x_train.shape))
 print('Train labels shape: ' + str(y_train.shape))
 
+random.seed(1234)
+
 rf = RandomForestClassifier(n_estimators=30, max_depth=9).fit(x_train, y_train)
 
 print('Score on train: ' + str(rf.score(x_train, y_train)))
